@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BOGO UI</title>
+    <link rel="stylesheet" href="box-toggle.css">
+  </head>
+  <body>
+    <div class="box">
+      <div class="heading">
+        <hr />
+        <span>YAY! It’s BOGO</span>
+        <hr />
+      </div>
+
+      <div class="opt" onclick="toggle(this)">
+        <div class="opt-head">
+          <div class="left">
+            <input type="radio" name="unit" checked />1 Unit
+            <span class="tag">10% Off</span>
+          </div>
+          <div>
+            <b>$10.00 USD</b><br /><s style="color: #aaa; font-size: 12px"
+              >$24.00 USD</s
+            >
+          </div>
+        </div>
+        <div class="collapse">Standard Price</div>
+      </div>
+
+      <div class="opt active" onclick="toggle(this)">
+        <div class="ribbon">MOST POPULAR</div>
+        <div class="opt-head">
+          <div class="left">
+            <input type="radio" name="unit" />2 Unit
+            <span class="tag">20% Off</span>
+          </div>
+          <div>
+            <b>$18.00 USD</b><br /><s style="color: #aaa; font-size: 12px"
+              >$24.00 USD</s
+            >
+          </div>
+        </div>
+        <div class="collapse">
+          <div class="variant">
+            <div class="variant-header">
+              <div></div>
+              <div>Size</div>
+              <div>Colour</div>
+            </div>
+            <div class="row">
+              <label>#1</label>
+              <select>
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+              </select>
+              <select>
+                <option>Black</option>
+                <option>Red</option>
+                <option>White</option>
+              </select>
+            </div>
+            <div class="row">
+              <label>#2</label>
+              <select>
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+              </select>
+              <select>
+                <option>Colour</option>
+                <option>Black</option>
+                <option>Red</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="opt" onclick="toggle(this)">
+        <div class="opt-head">
+          <div class="left">
+            <input type="radio" name="unit" />3 Unit
+            <span class="tag">30% Off</span>
+          </div>
+          <div>
+            <b>$24.00 USD</b><br /><s style="color: #aaa; font-size: 12px"
+              >$24.00 USD</s
+            >
+          </div>
+        </div>
+        <div class="collapse">Biggest Deal!</div>
+      </div>
+
+      <div class="footer">
+        <div class="free">Free Delivery</div>
+        Total : $18.00 USD
+      </div>
+      <button>+ Add to Cart</button>
+      <div class="powered">@ Powered by Pumper</div>
+    </div>
+
+    <script>
+      const toggle = (el) => {
+        document.querySelectorAll(".opt").forEach((opt) => {
+          opt.classList.toggle("active", opt === el);
+          opt.querySelector("input").checked = opt === el;
+        });
+      };
+    </script>
+  </body>
+</html>
